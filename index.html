@@ -7,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Primary SEO -->
-    <title>Deepwyrd Launcher – Download</title>
-    <meta name="description" content="Download the official Deepwyrd game launcher for Windows.">
+    <title>DEEPWYRD</title>
+    <meta name="description" content="Download the official DEEPWYRD game launcher for Windows.">
     <meta name="author" content="Iron Goblin Corp.">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://launcher.deepwyrd.com/">
+    <link rel="canonical" href="https://deepwyrd.com/">
 
     <!-- Open Graph (Discord, Slack, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Deepwyrd Launcher">
-    <meta property="og:description" content="Download the official Deepwyrd game launcher.">
+    <meta property="og:title" content="DEEPWYRD">
+    <meta property="og:description" content="Download the official DEEPWYRD game launcher.">
     <meta property="og:url" content="https://launcher.deepwyrd.com/">
     <meta property="og:image" content="https://launcher.deepwyrd.com/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Deepwyrd Launcher">
+    <meta name="twitter:title" content="DEEPWYRD Launcher">
     <meta name="twitter:description" content="Download the official Deepwyrd game launcher.">
     <meta name="twitter:image" content="https://launcher.deepwyrd.com/og-image.png">
 
@@ -41,30 +41,31 @@
 </head>
 
 <body class="page-image">
-<main>
-    <h1>Deepwyrd Launcher</h1>
 
-	<img src="img/DEEPWYRD_TEXT_LOGO.png" alt="DEEPWYRD Logo" class="centered-image">
+    <!-- Top section: padding space -->
+	<header class="top-spacer" aria-hidden="true"></header>
+	
+	<main>
+		<div class="content">
+			<img src="img/DEEPWYRD_TEXT_LOGO.png" alt="DEEPWYRD Logo" class="centered-image">
 
-    <p>
-        Download the official launcher to install and keep DEEPWYRD up to date.
-    </p>
+			<p>
+				Download the official launcher to install and keep DEEPWYRD up to date.
+			</p>
 
-    <!-- Replace href with GitHub Releases "latest" asset URL -->
-    <!-- <a class="download-button"
-       href="https://github.com/ORG/REPO/releases/latest/download/DeepwyrdLauncherSetup.exe"
-       download>
-        Download for Windows
-    </a> -->
+			<a class="download-button"
+			  href="#"
+			  onclick="document.getElementById('xsolla-installer-renamer').contentWindow.postMessage({ type: 'download', href: 'https://launcher.xsolla.com/launcher_project/9427/generate/14581/installer/web?redirect_url=https%3A%2F%2Fpublisher.xsolla.com%2F670461%2Fprojects%2F266752%2Fnew-launcher%2F9427%2Fbuild%2Fgl', name: 'DEEPWYRD_Installer' }, 'https://installer.launcher.xsolla.com');"
+			>
+			  Download Launcher for Windows
+			</a>
 
-    <p>
-        Supported OS: Windows 10 / 11<br>
-        File type: Installer (.exe)
-    </p>
-
-    <p>
-        If the download does not start automatically, use the link above.
-    </p>
+			<p>
+				Supported OS: Windows 10 / 11<br>
+				File type: Installer (.exe)
+			</p>
+		</div>
+	</main>
 
     <footer>
         <p>
@@ -76,5 +77,14 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<script>
+  const frame = document.createElement("IFRAME");
+  frame.id = "xsolla-installer-renamer";
+  frame.src = `https://installer.launcher.xsolla.com/launcher-installer-renamer-prod/v1/renamer.html?cache=${Date.now()}`;
+  frame.style = "display: none";
+  document.body.append(frame);
+</script>
+
 </body>
 </html>
