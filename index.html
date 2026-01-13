@@ -32,12 +32,21 @@
 
     <!-- Security / behavior -->
     <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline';">
+	<meta http-equiv="Content-Security-Policy" content="
+	  default-src 'self';
+	  frame-src https://installer.launcher.xsolla.com;
+	  connect-src 'self' https://installer.launcher.xsolla.com;
+	  img-src 'self' https: data:;
+	  style-src 'self' 'unsafe-inline';
+	  base-uri 'self';
+	  form-action 'self';
+	">
+
 		  
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
-		  
+
+	<script src="/xsolla-downloader.js" defer></script>
 </head>
 
 <body class="page-image">
@@ -78,13 +87,12 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<script>
-  const frame = document.createElement("IFRAME");
-  frame.id = "xsolla-installer-renamer";
-  frame.src = `https://installer.launcher.xsolla.com/launcher-installer-renamer-prod/v1/renamer.html?cache=${Date.now()}`;
-  frame.style = "display: none";
-  document.body.append(frame);
-</script>
+<iframe
+  id="xsolla-installer-renamer"
+  src="https://installer.launcher.xsolla.com/launcher-installer-renamer-prod/v1/renamer.html"
+  style="display:none"
+  title="Xsolla Installer Renamer">
+</iframe>
 
 </body>
 </html>
