@@ -60,6 +60,21 @@ p {
 	background-color: #f0d070;
 }
 
+.mobile-warning {
+	margin: 0;
+	padding: 0.65rem 0.9rem;
+	border: 1px solid rgba(230, 193, 90, 0.6);
+	border-radius: 6px;
+	color: #f3de9a;
+	background-color: rgba(15, 15, 18, 0.55);
+	font-size: 0.95rem;
+	max-width: 420px;
+}
+
+.mobile-warning.is-visible {
+	animation: fade-in 240ms ease-out;
+}
+
 /* Layout sections */
 main {
 	flex: 1 1 auto;
@@ -84,4 +99,15 @@ footer {
 	font-size: 12px;
 	opacity: 0.8;
 	padding: 8px 0 12px;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
