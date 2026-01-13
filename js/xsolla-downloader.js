@@ -16,7 +16,13 @@
         }
 
         frame.contentWindow.postMessage(
-            { type: "download", href: DOWNLOAD_HREF, name: DOWNLOAD_NAME },
+            {
+                type: "download",
+                href: DOWNLOAD_HREF,
+                name: DOWNLOAD_NAME,
+                filename: DOWNLOAD_NAME,
+                fileName: DOWNLOAD_NAME
+            },
             TARGET_ORIGIN
         );
     }
@@ -24,6 +30,8 @@
     document.addEventListener("DOMContentLoaded", function () {
         const button = document.getElementById("download-launcher");
         const frame = document.getElementById("xsolla-installer-renamer");
+        let frameReady = false;
+        let pendingDownload = false;
 
         if (!button) {
             console.error("Download button element not found.");
@@ -37,8 +45,20 @@
 
         refreshRenamerCacheBuster(frame);
 
+        frame.addEventListener("load", function () {
+            frameReady = true;
+            if (pendingDownload) {
+                pendingDownload = false;
+                sendDownloadMessage(frame);
+            }
+        });
+
         button.addEventListener("click", function (e) {
             e.preventDefault();
+            if (!frameReady) {
+                pendingDownload = true;
+                return;
+            }
             sendDownloadMessage(frame);
         });
     });
