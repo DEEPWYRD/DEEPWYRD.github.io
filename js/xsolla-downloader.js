@@ -1,6 +1,6 @@
 (function () {
     const DOWNLOAD_HREF = "https://launcher.xsolla.com/launcher_project/9427/generate/14582/installer/web";
-    const DOWNLOAD_NAME = "DEEPWYRD_Installer";
+    const DOWNLOAD_NAME = "DEEPWYRD_Installer.exe";
     const TARGET_ORIGIN = "https://installer.launcher.xsolla.com";
 
     function refreshRenamerCacheBuster(frame) {
