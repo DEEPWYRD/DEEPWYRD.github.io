@@ -47,7 +47,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/script.js" defer></script>
-	<script src="js/xsolla-downloader.js" defer></script>
+	<!-- <script src="js/xsolla-downloader.js" defer></script> -->
 </head>
 
 <body class="page-image">
@@ -63,8 +63,15 @@
 				Download the official launcher to install and keep DEEPWYRD up to date.
 			</p>
 
-			<a id="download-launcher" class="download-button" href="#">
+			<!-- <a id="download-launcher" class="download-button" href="#">
 			  Download Launcher for Windows
+			</a> -->
+
+			<a class="download-button"
+			  href="#"
+			  onclick="document.getElementById('xsolla-installer-renamer').contentWindow.postMessage({ type: 'download', href: 'https://launcher.xsolla.com/launcher_project/9427/generate/14582/installer/web', name: 'DEEPWYRD_Installer.exe' }, 'https://installer.launcher.xsolla.com');"
+			>
+			  Download Launcher
 			</a>
 
 			<p>
@@ -81,16 +88,20 @@
     </footer>
 </main>
 
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-<iframe
+<!-- <iframe
   id="xsolla-installer-renamer"
   src="https://installer.launcher.xsolla.com/launcher-installer-renamer-prod/v1/renamer.html"
   style="display:none"
   title="Xsolla Installer Renamer">
-</iframe>
+</iframe> -->
+
+<script>
+  const frame = document.createElement("IFRAME");
+  frame.id = "xsolla-installer-renamer";
+  frame.src = `https://installer.launcher.xsolla.com/launcher-installer-renamer-prod/v1/renamer.html?cache=${Date.now()}`;
+  frame.style = "display: none";
+  document.body.append(frame);
+</script>
 
 </body>
 </html>
