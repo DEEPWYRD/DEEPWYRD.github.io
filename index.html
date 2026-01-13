@@ -18,8 +18,8 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="DEEPWYRD">
     <meta property="og:description" content="Download the official DEEPWYRD game launcher.">
-    <meta property="og:url" content="https://launcher.deepwyrd.com/">
-    <meta property="og:image" content="https://launcher.deepwyrd.com/og-image.png">
+    <meta property="og:url" content="https://deepwyrd.com/">
+    <meta property="og:image" content="https://deepwyrd.com/img/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -45,9 +45,9 @@
 		  
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
-
+	
+	<!-- Scripts -->
 	<script src="js/script.js" defer></script>
-	<script src="js/xsolla-downloader.js" defer></script>
 </head>
 
 <body class="page-image">
@@ -56,19 +56,34 @@
 		<div class="content">
 			<img src="img/DEEPWYRD_TEXT_LOGO.png" alt="DEEPWYRD Logo" class="centered-image">
 
-			<p>
-				Download the official launcher to install and keep DEEPWYRD up to date.
-			</p>
+			<div class="box">
+				<p>
+					Download the official launcher to install and keep DEEPWYRD up to date.
+				</p>
 
-			<a class="download-button"
-			  href="https://launcher.xsolla.com/launcher_project/9427/generate/14582/installer/web">
-			  Download Launcher
-			</a>
+				<a class="download-button"
+				  href="https://launcher.xsolla.com/launcher_project/9427/generate/14582/installer/web">
+				  Download Launcher
+				</a>
 
-			<p>
-				Supported OS: Windows 10 / 11<br>
-				File type: Installer (.exe)
-			</p>
+				<p>
+					Supported OS: Windows 10 / 11<br>
+					File type: Installer (.exe)
+				</p>
+			</div>
+			
+			<h2 class="socials-title">Join the Discord</h2>
+			<div class="socials">
+				<a class="social-link" href="https://discord.gg/GnkUnkQW6a" aria-label="DEEPWYRD Discord">
+					<img src="img/discord_bw.png" alt="Discord">
+				</a>
+				<a class="social-link" href="https://www.tiktok.com/@deepwyrd" aria-label="DEEPWYRD TikTok">
+					<img src="img/tiktok_bw.png" alt="TikTok">
+				</a>
+				<a class="social-link" href="https://www.youtube.com/@IronGoblinCorptik" aria-label="DEEPWYRD YouTube">
+					<img src="img/youtube_bw.png" alt="YouTube">
+				</a>
+			</div>
 		</div>
 	</main>
 
@@ -78,14 +93,6 @@
         </p>
     </footer>
 </main>
-
-<script>
-  const frame = document.createElement("IFRAME");
-  frame.id = "xsolla-installer-renamer";
-  frame.src = `https://installer.launcher.xsolla.com/launcher-installer-renamer-prod/v1/renamer.html?cache=${Date.now()}`;
-  frame.style = "display: none";
-  document.body.append(frame);
-</script>
 
 </body>
 </html>

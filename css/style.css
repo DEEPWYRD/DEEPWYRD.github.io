@@ -38,7 +38,7 @@ p {
 
 .centered-image {
     display: block;
-    max-width: min(100%, 520px);
+    max-width: min(100%, 1040px);
     max-height: clamp(140px, 28vh, 320px);
     width: 100%;
     height: auto;
@@ -51,13 +51,56 @@ p {
 	font-size: 1.1rem;
 	font-weight: 600;
 	color: #0f0f12;
-	background-color: #e6c15a;
+	background-color: #FFDD00;
 	text-decoration: none;
 	border-radius: 4px;
+	margin: 1rem;
 }
 
 .download-button:hover {
 	background-color: #f0d070;
+}
+
+.socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.socials-title {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #FFDD00;
+}
+
+.social-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 9vw;
+	min-width: 3em;
+	max-width: 4em;
+	transition: opacity 160ms ease-out, transform 160ms ease-out;
+}
+
+.social-link:hover {
+	opacity: 1;
+	transform: translateY(-3px);
+	filter: brightness(0) saturate(100%)
+            invert(79%) sepia(96%)
+            saturate(749%) hue-rotate(2deg)
+            brightness(103%) contrast(101%);
+}
+
+.social-link img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	filter: invert(1);
 }
 
 .mobile-warning {
@@ -73,6 +116,13 @@ p {
 
 .mobile-warning.is-visible {
 	animation: fade-in 240ms ease-out;
+}
+
+.box {
+	border: 1px solid rgba(230, 193, 90, 0.45);
+	border-radius: 10px;
+	padding: clamp(14px, 3vh, 24px) clamp(16px, 4vw, 32px);
+	background-color: rgba(15, 15, 18, 0.35);
 }
 
 /* Layout sections */
